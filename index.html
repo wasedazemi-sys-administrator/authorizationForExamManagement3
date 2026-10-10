@@ -69,9 +69,9 @@
       }
 
       document.getElementById('msg').textContent = 'データを読み込み中...';
-      var profile = await liff.getProfile();
+      var  idToken = liff.getIDToken();
       // userId を取得したら GAS にリダイレクト（データ表示は GAS が担当）
-      window.location.href = GAS_URL + '?userId=' + encodeURIComponent(profile.userId);
+      window.location.href = GAS_URL + '?idToken=' + encodeURIComponent(idToken);
 
     } catch (err) {
       showError('エラー: ' + err.message);
